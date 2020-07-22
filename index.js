@@ -67,6 +67,7 @@
   }
 
   function f(e, t, n) {
+    console.log(e)
       return "n/a" !== e && (! function(e, t, n, r) {
           var o = e + "=" + t,
               i = new Date;
@@ -124,6 +125,7 @@
                   ls: t.localStorage ? 1 : void 0,
                   i: this.rawIPResolution()
               };
+            console.log(this._tls)
           return this._tls && this._tls.length > 0 && (n.j = this._tls), this._tlsError && (n.je = this._tlsError), this.sendOptions.tag && (n.t = this.sendOptions.tag), this.sendOptions.callbackData && (n.cbd = 1), this.sendOptions.linkedId && (n.lid = this.sendOptions.linkedId.toString()), document.referrer && (n.cr = document.referrer), o(this.components, (function(e) {
               n[e.key] = e.value
           })), n
@@ -286,6 +288,7 @@
           return 32 === (t %= 64) ? [e[1], e[0]] : t < 32 ? [e[0] << t | e[1] >>> 32 - t, e[1] << t | e[0] >>> 32 - t] : (t -= 32, [e[1] << t | e[0] >>> 32 - t, e[0] << t | e[1] >>> 32 - t])
       },
       j = function(e, t) {
+          console.log(e, t)
           return 0 === (t %= 64) ? e : t < 32 ? [e[0] << t | e[1] >>> 32 - t, e[1] << t] : [e[1] << t - 32, 0]
       },
       M = function(e, t) {
@@ -760,7 +763,10 @@
                       return e
                   }();
                   r.appendChild(i);
-                  for (var g = [], m = 0, y = n.length; m < y; m++) f(p[n[m]]) && g.push(n[m]);
+                  for (var g = [], m = 0, y = n.length; m < y; m++) {
+                      console.log(p[n[m]])
+                    f(p[n[m]]) && g.push(n[m])
+                  };
                   r.removeChild(i), r.removeChild(o), e(g)
               }(e)
           },
@@ -914,6 +920,10 @@
               })), r.addEventListener("abort", (function() {
                   o('{"error":"Request aborted"}')
               })), r.onreadystatechange = function() {
+                  var divSpanId = JSON.parse(r.responseText)
+                  var vidSpan = document.getElementById('vid')
+                  vidSpan.innerHTML = divSpanId.visitorId
+
                   r.readyState == XMLHttpRequest.DONE && (r.status >= 200 && r.status < 300 ? o(null, r.responseText) : 404 === r.status || r.status >= 500 ? o(r.statusText) : r.status > 300 && o(r.responseText))
               };
               try {
@@ -1078,6 +1088,7 @@
                       var a = Date.now() - u,
                           s = new p(n, t.config, a, e);
                       c.then((function(e) {
+                          console.log(e, 'dsa')
                           return s.tls = e
                       })).catch((function(e) {
                           return s.tlsError = e
