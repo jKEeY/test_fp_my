@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script async src="index.js"></script>
+  <script>
+   
+   window.fpLayer = window.fpLayer || [];
+      function fp() { fpLayer.push(arguments); }
+      fp('config', 'client', 'LYe4RiP1DmlEujmTVQ3f');
+      fp('config', 'region', 'eu');
+      fp('config', 'loaded', function (fp) {
+        console.log(fp)
+        fp.send().then(function (data) {
+          console.log(data);
+        });
+      });
+  </script>
+</head>
+<body>
+  <button id="btn" >Скопировать</button>
+</body>
+</html>
