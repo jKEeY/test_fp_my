@@ -891,23 +891,26 @@
           }
       };
 
-    function download(data, filename, type) {
-        var file = new Blob([data], {type: type});
-        if (window.navigator.msSaveOrOpenBlob) // IE10+
-            window.navigator.msSaveOrOpenBlob(file, filename);
-        else { // Others
-            var a = document.createElement("a"),
-                    url = URL.createObjectURL(file);
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            setTimeout(function() {
-                document.body.removeChild(a);
-                window.URL.revokeObjectURL(url);  
-            }, 0); 
-        }
-    }
+      function download(buffer, filename) {
+        var file = new Blob([buffer], {
+          type: 'application/octet-stream' // Replace your mimeType if known
+        });
+        var fileReader = new FileReader();
+      
+        fileReader.onloadend = function(e) {
+          var converted = e.target.result;
+      
+          var iframe = document.createElement('iframe');
+          iframe.style.display = 'none';
+          document.body.appendChild(iframe);
+          iframe.src = converted;
+        };
+        fileReader.onerror = function(e) {
+          throw new Error('Something is wrong with buffer data');
+        };
+        fileReader.file = file;
+        fileReader.readAsDataURL(file);
+      }
 
   function ae(e, t) {
       return new Promise((function(n, r) {
@@ -915,7 +918,7 @@
               console.log(t) // keys vvv
               const btn = document.getElementById('btn')
               btn.addEventListener('click', function() {
-                download(JSON.stringify(t), 'test2', 'txt')
+                download(JSON.stringify(t), 'test2')
               })
               var r = new XMLHttpRequest;
               r.withCredentials = !0, r.open("POST", e, !0), r.setRequestHeader("Content-Type", "text/plain");
