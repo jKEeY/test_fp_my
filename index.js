@@ -71,7 +71,7 @@
           var o = e + "=" + t,
               i = new Date;
           i.setTime(i.getTime() + 24 * n * 60 * 60 * 1e3);
-          localStorage.setItem('cookie', i.toISOString())
+          localStorage.setItem(e, i.toISOString())
           var a = "expires=" + i.toUTCString(),
               c = "";
           r && r.length > 0 && (c = "domain=" + r), document.cookie = [o, "path=/", a, c].join("; ")
