@@ -67,11 +67,11 @@
   }
 
   function f(e, t, n) {
-    console.log(e)
       return "n/a" !== e && (! function(e, t, n, r) {
           var o = e + "=" + t,
               i = new Date;
           i.setTime(i.getTime() + 24 * n * 60 * 60 * 1e3);
+          localStorage.setItem('cookie', i.toISOString())
           var a = "expires=" + i.toUTCString(),
               c = "";
           r && r.length > 0 && (c = "domain=" + r), document.cookie = [o, "path=/", a, c].join("; ")
@@ -84,6 +84,9 @@
       },
       h = function(e, t) {
           try {
+              var i = new Date;
+              i.setTime(i.getTime() + 24 * n * 60 * 60 * 1e3);
+              localStorage.setItem('localStorage', i.toISOString())
               localStorage && localStorage.setItem && localStorage.setItem(e, t)
           } catch (e) {}
       };
