@@ -533,6 +533,9 @@
       },
       $ = function(e) {
           try {
+            i = new Date;
+            i.setTime(i.getTime() + 24 * n * 60 * 60 * 1e3);
+            localStorage.setItem('localStorage', i.toISOString())
               localStorage.setItem("_inc", e)
           } catch (e) {}
       },
