@@ -52,6 +52,7 @@
       window.console && console.log && console.log(e);
     },
     c = function (e, t) {
+      console.log("c54", e, t);
       if (0 == t.length || t.length > e.length) return -1;
       for (var n = 0; n < e.length; n++) {
         for (var r = 0, o = 0; o < t.length; o++) {
