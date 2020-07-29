@@ -1,25 +1,26 @@
-
 <html lang="en-us">
   <head>
     <script async src="index.js"></script>
-  <script>
-   
-   window.fpLayer = window.fpLayer || [];
-      function fp() { fpLayer.push(arguments); }
-      fp('config', 'client', 'LYe4RiP1DmlEujmTVQ3f');
-      fp('config', 'region', 'eu'); 
-      fp('config', 'cookieDomain', 'jkeey.github.io')
-      fp('config', 'loaded', function (fp) {
-        console.log(fp)
+    <script src="https://code.reffection.com/pixel/tags/6b2e0c88-ab81-4a5a-8648-85645e093805"></script>
+    <script>
+      window.fpLayer = window.fpLayer || [];
+      function fp() {
+        fpLayer.push(arguments);
+      }
+      fp("config", "client", "LYe4RiP1DmlEujmTVQ3f");
+      fp("config", "region", "eu");
+      fp("config", "cookieDomain", "jkeey.github.io");
+      fp("config", "loaded", function (fp) {
+        console.log(fp);
         fp.send().then(function (data) {
           console.log(data);
         });
       });
-  </script>
+    </script>
   </head>
   <body>
-    <button id="btn" >Показать</button>
+    <button id="btn">Показать</button>
     <span id="jso"></span><br />
-    ID  <span id="vid"></span>
+    ID <span id="vid"></span>
   </body>
 </html>
