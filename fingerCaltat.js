@@ -29,4 +29,8 @@ class FingerCaltat {
 
 var fingetCaltat = new FingerCaltat({});
 
-console.log(fingetCaltat.test());
+console.log(
+  fingetCaltat.test().then(function (a) {
+    console.log(a);
+  })
+);
