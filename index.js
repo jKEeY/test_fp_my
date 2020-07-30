@@ -126,7 +126,7 @@
   })(l || (l = {}));
   var p = (function () {
     function e(e, t, n, r) {
-      (this._tls = null),
+      console.log("components", r)((this._tls = null)),
         (this._tlsError = null),
         (this.requestId = u(20)),
         (this.sendOptions = e),
