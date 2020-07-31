@@ -126,7 +126,7 @@
   })(l || (l = {}));
   var p = (function () {
     function e(e, t, n, r) {
-      (this._tlsError = null),
+      ((this._tlsError = null)),
         (this.requestId = u(20)),
         (this.sendOptions = e),
         (this.config = t),
@@ -1410,7 +1410,7 @@
                 a < o;
                 a++
               )
-                i[a] = r.charCode`At(a);
+                i[a] = r.charCodeAt(a);
               var u = c(i, [73, 68, 65, 84, 24]);
               if (-1 == u) return !1;
               var s = c(i, [73, 69, 78, 68]);
