@@ -120,7 +120,7 @@
       } catch (e) {}
     };
   !(function (e) {
-    console.log()((e[(e.unset = -1)] = "unset")),
+    (e[(e.unset = -1)] = "unset"),
       (e[(e.city = 1)] = "city"),
       (e[(e.full = 2)] = "full");
   })(l || (l = {}));
