@@ -1,26 +1,25 @@
 <html lang="en-us">
   <head>
     <script async src="index.js"></script>
-    <script src="fingerCaltat.js"></script>
     <script>
       window.fpLayer = window.fpLayer || [];
       function fp() {
         fpLayer.push(arguments);
       }
-      fp("config", "client", "LYe4RiP1DmlEujmTVQ3f");
+      fp("config", "client", "8Zx1ZLZBQ3JQ8ra5GpsB");
       fp("config", "region", "eu");
       fp("config", "cookieDomain", "jkeey.github.io");
       fp("config", "loaded", function (fp) {
         console.log(fp);
         fp.send().then(function (data) {
-          console.log(data);
+          var span = document.querySelector("#idMur");
+          span.innerHTML = data;
         });
       });
     </script>
   </head>
   <body>
-    <button id="btn">Показать</button>
-    <span id="jso"></span><br />
-    ID <span id="vid"></span>
+    Твой id: <br />
+    <span id="idMur"></span>
   </body>
 </html>
