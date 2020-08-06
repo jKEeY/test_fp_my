@@ -111,6 +111,7 @@ class SavedCookieSid {
       }
     }
 
+    console.log("dsa");
     document.cookie = updatedCookie + "; path=/;";
   }
   saveValueSessionStorage(key, value) {
