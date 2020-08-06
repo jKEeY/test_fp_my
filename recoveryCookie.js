@@ -93,17 +93,9 @@ class SavedCookieSid {
   saveValueCookie(key, value) {
     let options = {};
     const d = new Date();
-    if (typeof expires == "number" && expires) {
-      d.setTime(d.getTime() + 3600 * 1000 * 24 * 365 * expires);
-      expires = options.expires = d;
-    } else {
-      d.setTime(d.getTime() + 3600 * 1000 * 24 * 365 * 5);
-      options.expires = expires = d;
-    }
 
-    if (expires && expires.toUTCString) {
-      options.expires = expires.toUTCString();
-    }
+    d.setTime(d.getTime() + 3600 * 1000 * 24 * 365 * 5);
+    options.expires = d;
 
     value = encodeURIComponent(value);
 
