@@ -93,7 +93,7 @@ class SavedCookieSid {
   saveValueCookie(key, value) {
     const date = new Date();
     date.setFullYear(date.getFullYear() + 1);
-    document.cookie = key + "=" + value + "expires=True," + date;
+    document.cookie = key + "=" + value + "expires=" + date;
   }
   saveValueSessionStorage(key, value) {
     sessionStorage.setItem(key, value);
