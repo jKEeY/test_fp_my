@@ -7,16 +7,14 @@
     <script async src="https://cdn.fpjs.io/@2/fp.js"></script>
     <script>
       var test = window.SavedCookieSid;
-      console.log(test);
       var scs = new test();
       var result = scs.init("_my_visitorId");
-      console.log(result);
       if (!result) {
         window.fpLayer = window.fpLayer || [];
         function fp() {
           fpLayer.push(arguments);
         }
-        fp("config", "client", "dfsdsadsadas");
+        fp("config", "client", "7CYuziQhTnANCSyAnzgg");
         fp("config", "region", "eu");
         fp("config", "cookieDomain", "jkeey.github.io");
         fp("config", "loaded", function (fp) {
@@ -43,7 +41,6 @@
           });
         });
       } else {
-        console.log("Всё ок");
         var span = document.querySelector("#idMur");
         document.cookie = "_my_visitorId=" + result;
         span.innerHTML = result;
