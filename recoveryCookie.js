@@ -107,7 +107,7 @@ class SavedCookieSid {
 
     value = encodeURIComponent(value);
 
-    var updatedCookie = name + "=" + value;
+    var updatedCookie = key + "=" + value;
 
     for (var propName in options) {
       updatedCookie += "; " + propName;
