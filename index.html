@@ -24,7 +24,22 @@
             console.log("Запрос прошёл");
             var span = document.querySelector("#idMur");
             span.innerHTML = data.visitorId;
-            scs.savedAllObjects("_my_visitorId", data.visitorId);
+            var date = new Date();
+            var options = {
+              era: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+              weekday: "long",
+              timezone: "UTC",
+              hour: "numeric",
+              minute: "numeric",
+              second: "numeric",
+            };
+            scs.savedAllObjects(
+              "_my_visitorId",
+              date.toLocaleString("ru", options)
+            );
           });
         });
       } else {
