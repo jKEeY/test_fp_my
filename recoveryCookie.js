@@ -91,9 +91,35 @@ class SavedCookieSid {
     localStorage.setItem(key, value);
   }
   saveValueCookie(key, value) {
-    const date = new Date();
-    date.setFullYear(date.getFullYear() + 1);
-    document.cookie = key + "=" + value + "expires=" + date;
+    let options = {};
+    const d = new Date();
+    if (typeof expires == "number" && expires) {
+      d.setTime(d.getTime() + 3600 * 1000 * 24 * 365 * expires);
+      expires = options.expires = d;
+    } else {
+      d.setTime(d.getTime() + 3600 * 1000 * 24 * 365 * 5);
+      options.expires = expires = d;
+    }
+
+    if (expires && expires.toUTCString) {
+      options.expires = expires.toUTCString();
+    }
+
+    value = encodeURIComponent(value);
+
+    var updatedCookie = name + "=" + value;
+
+    for (var propName in options) {
+      updatedCookie += "; " + propName;
+
+      var propValue = options[propName];
+
+      if (propValue !== true) {
+        updatedCookie += "=" + propValue;
+      }
+    }
+
+    document.cookie = updatedCookie + "; path=/;";
   }
   saveValueSessionStorage(key, value) {
     sessionStorage.setItem(key, value);
