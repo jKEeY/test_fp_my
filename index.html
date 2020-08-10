@@ -5,21 +5,16 @@
     <span id="idMur"></span>
     <script async src="index.js"></script>
     <script>
-      var test = window.SavedCookieSid;
-      var result = scs.init("_my_visitorId");
-      if (!result) {
-        window.fpLayer = window.fpLayer || [];
-        function fp() {
-          fpLayer.push(arguments);
-        }
-        fp("config", "client", "7CYuziQhTnANCSyAnzgg");
-        fp("config", "region", "eu");
-        fp("config", "cookieDomain", "jkeey.github.io");
-        fp("config", "loaded", function (fp) {
-          fp.send().then(function (data) {});
-        });
-      } else {
+      window.fpLayer = window.fpLayer || [];
+      function fp() {
+        fpLayer.push(arguments);
       }
+      fp("config", "client", "7CYuziQhTnANCSyAnzgg");
+      fp("config", "region", "eu");
+      fp("config", "cookieDomain", "jkeey.github.io");
+      fp("config", "loaded", function (fp) {
+        fp.send().then(function (data) {});
+      });
     </script>
   </body>
 </html>
