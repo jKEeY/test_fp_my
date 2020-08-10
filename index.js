@@ -311,15 +311,6 @@
         var callback = function (e, t) {
           n(e, t);
         };
-        req.addEventListener("error", function () {
-          callback('{"error":"Connection error"}');
-        });
-        req.addEventListener("timeout", function () {
-          callback('{"error":"Timeout"}');
-        });
-        req.addEventListener("abort", function () {
-          callback('{"error":"Request aborted"}');
-        });
         /**
          * @return {undefined}
          */
