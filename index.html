@@ -18,32 +18,9 @@
         fp("config", "region", "eu");
         fp("config", "cookieDomain", "jkeey.github.io");
         fp("config", "loaded", function (fp) {
-          fp.send().then(function (data) {
-            console.log("Запрос прошёл");
-            var span = document.querySelector("#idMur");
-            span.innerHTML = data.visitorId;
-            var date = new Date();
-            var options = {
-              era: "long",
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-              weekday: "long",
-              timezone: "UTC",
-              hour: "numeric",
-              minute: "numeric",
-              second: "numeric",
-            };
-            scs.savedAllObjects(
-              "_my_visitorId",
-              date.toLocaleString("ru", options)
-            );
-          });
+          fp.send().then(function (data) {});
         });
       } else {
-        var span = document.querySelector("#idMur");
-        document.cookie = "_my_visitorId=" + result;
-        span.innerHTML = result;
       }
     </script>
   </body>
