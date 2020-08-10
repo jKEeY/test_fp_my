@@ -321,6 +321,7 @@
           callback(validationResp.message);
         }
       })(data, options, function (text, t) {
+        console.log();
         if (text) {
           var data = {};
           try {
@@ -332,15 +333,8 @@
           }
           return success(data);
         }
-        try {
-          /** @type {*} */
-          var F = JSON.parse(t);
-          require(F);
-        } catch (e) {
-          success({
-            error: "Failed to parse the response as a valid JSON",
-          });
-        }
+        var F = t;
+        require(F);
       });
     });
   }
