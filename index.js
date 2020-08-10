@@ -285,12 +285,7 @@
         /** @type {boolean} */
         req.withCredentials = true;
         req.open("POST", e, true);
-        req.setRequestHeader("Content-Type", "text/plain");
-        /**
-         * @param {string} e
-         * @param {string} t
-         * @return {undefined}
-         */
+        
         var callback = function(e, t) {
           n(e, t);
         };
@@ -306,20 +301,7 @@
         /**
          * @return {undefined}
          */
-        req.onreadystatechange = function() {
-          if (req.readyState == XMLHttpRequest.DONE) {
-            if (req.status >= 200 && req.status < 300) {
-              callback(void 0, req.responseText);
-            } else {
-              if (404 === req.status || req.status >= 500) {
-                callback(req.statusText);
-              } else {
-                if (req.status > 300) {
-                  callback(req.responseText);
-                }
-              }
-            }
-          }
+        callback(void 0, guid());
         };
         try {
           req.send(JSON.stringify(val));
@@ -331,7 +313,7 @@
           var data = {};
           try {
             /** @type {*} */
-            data = JSON.parse(text);
+            data = textl
           } catch (t) {
             /** @type {string} */
             data.error = text;
