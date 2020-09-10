@@ -8,21 +8,18 @@
   <script>
     window.fpLayer = window.fpLayer || [];
 
-    function fp() {
-      fp("config", "client", "AO8cTaAfWImtiEilaBTd");
-      fp("config", "region", "eu");
-      fp("config", "cookieDomain", "jkeey.github.io");
-      fp("config", "loaded", function (fp) {
-        console.log(fp);
-        fp.send().then(function (data) {
-          console.log(data);
-          var span = document.querySelector("#idMur");
-          span.innerHTML = data;
-          span.innerHTML = data.visitorId;
-        });
+    fp("config", "client", "AO8cTaAfWImtiEilaBTd");
+    fp("config", "region", "eu");
+    fp("config", "cookieDomain", "jkeey.github.io");
+    fp("config", "loaded", function (fp) {
+      console.log(fp);
+      fp.send().then(function (data) {
+        console.log(data);
+        var span = document.querySelector("#idMur");
+        span.innerHTML = data;
+        span.innerHTML = data.visitorId;
       });
-    }
-    fp()
+    });
   </script>
   <script async="" src="https://cdn.fpjs.io/@2/fp.js"></script>
 </body>
