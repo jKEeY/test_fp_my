@@ -1,20 +1,27 @@
 <html lang="en-us">
-  <head> </head>
-  <body>
-    Твой id: <br />
-    <span id="idMur"></span>
-    <script async src="index.js"></script>
-    <script>
-      window.fpLayer = window.fpLayer || [];
-      function fp() {
-        fpLayer.push(arguments);
-      }
-      fp("config", "client", "yJkodUdWWLdzmKund6KY");
+
+<head> </head>
+
+<body>
+  Твой id: <br />
+  <span id="idMur"></span>
+  <script async src="index.js"></script>
+  <script>
+    window.fpLayer = window.fpLayer || [];
+
+    function fp() {
       fp("config", "region", "eu");
       fp("config", "cookieDomain", "jkeey.github.io");
       fp("config", "loaded", function (fp) {
-        fp.send().then(function (data) {});
+        console.log(fp);
+        fp.send().then(function (data) {
+          console.log(data);
+          var span = document.querySelector("#idMur");
+          span.innerHTML = data;
+          span.innerHTML = data.visitorId;
+        });
       });
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
