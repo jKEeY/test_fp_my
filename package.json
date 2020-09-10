@@ -1,0 +1,23 @@
+{
+  "name": "test_fp_my",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --unhandled-rejections=strict --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jKEeY/test_fp_my.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jKEeY/test_fp_my/issues"
+  },
+  "homepage": "https://github.com/jKEeY/test_fp_my#readme",
+  "dependencies": {
+    "jest": "^26.1.0"
+  }
+}
